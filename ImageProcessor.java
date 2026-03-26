@@ -26,11 +26,11 @@ public class ImageProcessor {
                 int red = (rgb >> 16) & 0xFF;
                 int green = (rgb >> 8) & 0xFF;
                 int blue = rgb & 0xFF;
+
                 red = 255 - red;
                 green = 255 - green;
                 blue = 255 - blue;
-                int new_rgb = (rgb & 0xFF000000) | (red << 16) | (green << 8) | blue;
-                image.setRGB(x, y, new_rgb);
+                image.setRGB(x, y, new Color(red, green, blue).getRGB());
             }
         }
     }
